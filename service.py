@@ -1,5 +1,5 @@
 from api import API
-
+from collections import defaultdict
 
 class SPService:
     """
@@ -26,22 +26,37 @@ class SPService:
         """
 
         if self.params['debt_option'] == 'ticket':
-            response_json = self.get_json_response("ConsultaMultas")
+            response_json = self.mount_debt_data(multas=self.get_json_response("ConsultaMultas"))
 
         elif self.params['debt_option'] == 'ipva':
-            response_json = self.get_json_response("ConsultaIPVA")
+            response_json = self.mount_debt_data(ipva=self.get_json_response("ConsultaIPVA"))
 
         elif self.params['debt_option'] == 'dpvat':
-            response_json = self.get_json_response("ConsultaDPVAT")
+            response_json = self.mount_debt_data(dpvat=self.get_json_response("ConsultaDPVAT"))
 
+        elif self.params['debt_option'] == None:
+            response_json = self.mount_debt_data(multas=self.get_json_response("ConsultaMultas"),
+                                                ipva=self.get_json_response("ConsultaIPVA"),
+                                                dpvat=self.get_json_response("ConsultaDPVAT"))
+                                    
         else:
             raise Exception("opção inválida")
 
-        debts = {
-            'IPVAs': response_json.get('IPVAs') or {},
-            'DPVATs': response_json.get('DPVATs') or {},
-            'Multas': response_json.get('Multas') or {},
-        }
+        return response_json
+
+    def mount_debt_data(self, **kwargs):
+        ipva = kwargs.get('ipva')
+        dpvat = kwargs.get('dpvat')
+        multas = kwargs.get('multas')
+
+        debts = defaultdict()
+
+        if ipva:
+            debts['IPVAs'] = ipva.get('IPVAs') or {}
+        if dpvat:
+            debts['DPVATs'] = dpvat.get('DPVATs') or {}
+        if multas:
+            debts['Multas'] = multas.get('Multas') or {}
 
         for debt in debts:
             if debts[debt] == {}:
