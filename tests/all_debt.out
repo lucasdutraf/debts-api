@@ -1,0 +1,54 @@
+{
+    "IPVA": [
+        {
+            "amount": 1365.69,
+            "description": "IPVA 2021",
+            "title": "IPVA - Cota Única",
+            "type": "ipva",
+            "year": 2021,
+            "installment": "unique"
+        },
+        {
+            "amount": 1012.5,
+            "description": "IPVA 2020",
+            "title": "IPVA - Cota 2",
+            "type": "ipva",
+            "year": 2020,
+            "installment": 2
+        }
+    ],
+    "Multas": [
+        {
+            "amount": 201.18,
+            "auto_infraction": "5E5E5E5E  ",
+            "description": "Estacionar em Desacordo com a Sinalizacao.",
+            "title": "Infração de Trânsito",
+            "type": "ticket"
+        },
+        {
+            "amount": 131.66,
+            "auto_infraction": "6F6F6F6F  ",
+            "description": "Trans. Veloc. Super. a Maxima Permitidaem Ate 20%.",
+            "title": "Infração de Trânsito",
+            "type": "ticket"
+        }
+    ],
+    "DPVATs": [
+        {
+            "amount": 5.23,
+            "description": "DPVAT 2020",
+            "title": "Seguro Obrigatório",
+            "type": "insurance",
+            "year": 2020
+        }
+    ],
+    "Licenciamentos": [
+        {
+            "amount": 98.91,
+            "description": "Licenciamento 2021",
+            "title": "Licenciamento de Veículo",
+            "type": "licensing",
+            "year": 2021
+        }
+    ]
+}

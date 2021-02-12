@@ -1,0 +1,18 @@
+[
+    {
+        "amount": 1365.69,
+        "description": "IPVA 2021",
+        "title": "IPVA - Cota Única",
+        "type": "ipva",
+        "year": 2021,
+        "installment": "unique"
+    },
+    {
+        "amount": 1012.5,
+        "description": "IPVA 2020",
+        "title": "IPVA - Cota 2",
+        "type": "ipva",
+        "year": 2020,
+        "installment": 2
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "amount": 201.18,
+        "auto_infraction": "5E5E5E5E  ",
+        "description": "Estacionar em Desacordo com a Sinalizacao.",
+        "title": "Infração de Trânsito",
+        "type": "ticket"
+    },
+    {
+        "amount": 131.66,
+        "auto_infraction": "6F6F6F6F  ",
+        "description": "Trans. Veloc. Super. a Maxima Permitidaem Ate 20%.",
+        "title": "Infração de Trânsito",
+        "type": "ticket"
+    }
+]
