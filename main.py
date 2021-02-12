@@ -3,6 +3,29 @@ import json
 from service import SPService
 from parser import SPParser
 
+def normalize_license_plate(license_plate):
+    conversion_table = {
+        "A": 0,
+        "B": 1,
+        "C": 2,
+        "D": 3,
+        "E": 4,
+        "F": 5,
+        "G": 6,
+        "H": 7,
+        "I": 8,
+        "J": 9
+    }
+    if license_plate[4].isalpha():
+        resultant_license_plate = ""
+        for index in range(0, len(license_plate)):
+            if index == 4:
+                resultant_license_plate += str(conversion_table[license_plate[index]])
+            else:
+                resultant_license_plate += license_plate[index]
+        return resultant_license_plate
+    return license_plate
+
 if __name__ == "__main__":
     try:
         if len(sys.argv) == 3:    
@@ -19,7 +42,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     service = SPService(
-        license_plate=license_plate,
+        license_plate=normalize_license_plate(license_plate),
         renavam=renavam,
         debt_option=debt_option
     )
