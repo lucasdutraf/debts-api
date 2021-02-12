@@ -4,12 +4,16 @@ from service import SPService
 from parser import SPParser
 
 if __name__ == "__main__":
-
     try:
-        debt_option = sys.argv[1]
-        license_plate = sys.argv[2]
-        renavam = sys.argv[3]
-        assert len(sys.argv) == 4
+        if len(sys.argv) == 3:    
+            debt_option = None
+            license_plate = sys.argv[1]
+            renavam = sys.argv[2]
+        elif len(sys.argv) == 4:    
+            debt_option = sys.argv[1]
+            license_plate = sys.argv[2]
+            renavam = sys.argv[3]
+        assert len(sys.argv) == 4 or len(sys.argv) == 3
     except (AssertionError, IndexError):
         print("Argumentos inválidos")
         sys.exit(1)
@@ -33,6 +37,8 @@ if __name__ == "__main__":
         result = parser.collect_ipva_debts()
     elif debt_option == "dpvat":
         result = parser.collect_insurance_debts()
+    elif debt_option == None:
+        result = parser.collect_all_debts()
     else:
         print("Opção inválida")
         sys.exit(1)
