@@ -61,6 +61,32 @@ class SPParser:
 
         return collection
 
+    def collect_licensing_debts(self):
+        debts = self.get_debts_from_json('Licenciamentos')
+
+        if debts is not None:
+            debts = debts['Licenciamento']
+
+        else:
+            return []
+
+        collection = []
+
+        for debt in debts:
+            to_collection = {
+                'amount': float(debt.get('TaxaLicenciamento'))/100,
+                'description': debt.get(
+                    'DescricaoServico',
+                    f"Licenciamento {debt['Exercicio']}"
+                ),
+                'title': 'Licenciamento de Veículo',
+                'type': 'licensing',
+                'year': debt.get('Exercicio'),
+            }
+            collection.append(to_collection)
+
+        return collection
+
     def collect_insurance_debts(self):
         debts = self.get_debts_from_json('DPVATs')
 
@@ -94,6 +120,7 @@ class SPParser:
         collection['IPVA'] = self.collect_ipva_debts()
         collection['Multas'] = self.collect_ticket_debts()
         collection['DPVATs'] = self.collect_insurance_debts()
+        collection['Licenciamentos'] = self.collect_licensing_debts()
 
         return collection
 
