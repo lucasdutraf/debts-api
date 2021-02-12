@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class SPParser:
     def __init__(self, data):
         self.data = data
@@ -83,6 +85,15 @@ class SPParser:
             }
 
             collection.append(to_collection)
+
+        return collection
+    
+    def collect_all_debts(self):
+        collection = defaultdict()
+
+        collection['IPVA'] = self.collect_ipva_debts()
+        collection['Multas'] = self.collect_ticket_debts()
+        collection['DPVATs'] = self.collect_insurance_debts()
 
         return collection
 
