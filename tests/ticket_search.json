@@ -1,0 +1,17 @@
+{
+    "Multas": {
+        "Multa": [
+            {
+                "AIIP": "5E5E5E5E  ",
+                "Guia": 472535212,
+                "Valor": 20118,
+                "DescricaoEnquadramento": "Estacionar em Desacordo com a Sinalizacao."
+            },
+            {
+                "AIIP": "6F6F6F6F  ",
+                "Valor": 13166,
+                "DescricaoEnquadramento": "Trans. Veloc. Super. a Maxima Permitidaem Ate 20%."
+            }
+        ]
+    }
+}

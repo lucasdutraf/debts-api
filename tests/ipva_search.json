@@ -1,0 +1,16 @@
+{
+    "IPVAs": {
+        "IPVA": [
+            {
+                "Cota": 8,
+                "Valor": 136569,
+                "Exercicio": 2021
+            },
+            {
+                "Cota": 2,
+                "Valor": 101250,
+                "Exercicio": 2020
+            }
+        ]
+    }
+}

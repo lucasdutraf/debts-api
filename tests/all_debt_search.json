@@ -1,0 +1,47 @@
+{
+    "IPVAs": {
+        "IPVA": [
+            {
+                "Cota": 8,
+                "Valor": 136569,
+                "Exercicio": 2021
+            },
+            {
+                "Cota": 2,
+                "Valor": 101250,
+                "Exercicio": 2020
+            }
+        ]
+    },
+    "DPVATs": {
+        "DPVAT": [
+            {
+                "Valor": 523,
+                "Exercicio": 2020
+            }
+        ]
+    },
+    "Multas": {
+        "Multa": [
+            {
+                "AIIP": "5E5E5E5E  ",
+                "Guia": 472535212,
+                "Valor": 20118,
+                "DescricaoEnquadramento": "Estacionar em Desacordo com a Sinalizacao."
+            },
+            {
+                "AIIP": "6F6F6F6F  ",
+                "Valor": 13166,
+                "DescricaoEnquadramento": "Trans. Veloc. Super. a Maxima Permitidaem Ate 20%."
+            }
+        ]
+    },
+    "Licenciamentos": {
+        "Licenciamento": [
+            {
+                "Exercicio": 2021,
+                "TaxaLicenciamento": 9891
+            }
+        ]
+    }
+}
