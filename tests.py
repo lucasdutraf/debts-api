@@ -28,10 +28,16 @@ def test_main_flow(license_plate, renavam, debt_option, output_file):
         result = parser.collect_all_debts()
     assert result == output_
 
+@pytest.mark.parametrize("license_plate, renavam, debt_option, output_file", [('ABC1234', '11111111111', 'dpvat', './tests/dpvat_search.json'), ('ABC1234', '11111111111', 'ipva', './tests/ipva_search.json'), ('ABC1234', '11111111111', 'licensing', './tests/licensing_search.json'),('ABC1234', '11111111111', 'ticket', './tests/ticket_search.json'), (('ABC1234', '11111111111', None, './tests/all_debt_search.json'))])
+def test_debt_search(license_plate, renavam, debt_option, output_file):
+    with open(output_file, 'r') as f:
+        output_ = json.load(f)
 
-# @pytest.mark.parametrize("input_file", [('./src/utils/read_file_es.json'), ('./test_utils/read_file_en.json')])
-# def test_read_input_file_not_found(input_file):
-#     with pytest.raises(ArquivoNaoEncontradoException):
-#         parser = Parser()
+    service = SPService(
+        license_plate=license_plate,
+        renavam=renavam,
+        debt_option=debt_option
+    )
+    search_result = service.debt_search()
+    assert search_result == output_
 
-#         assert parser.read_input_file(input_file)
