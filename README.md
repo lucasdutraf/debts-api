@@ -1,6 +1,11 @@
 # Debts API
 This repository stores code from Zapay's Python Backend Developer coding challenge.
 
+## Baixando o conteúdo do repositório
+1. É necessário possuir `git` instalado em sua máquina;
+2. Clone o projeto; ```$ git clone https://github.com/lucasdutraf/debts-api```
+3. Acesse o diretório criado. ```$ cd debts-api```
+
 ## Como rodar o projeto
 1. O ideal é possuir um `virtualenv` para instalar as bibliotecas extras;
 2. Instale as bibliotecas adicionais utilizadas ```pip3 install -r requirements.txt```
